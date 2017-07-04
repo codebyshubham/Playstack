@@ -1,0 +1,114 @@
+/*input[type=checkbox] {
+  outline: 0
+}*/
+.alpha0 {
+  opacity: 0; }
+
+.pointer0 {
+  pointer-events: none; }
+
+.margin0 {
+  margin: 0; }
+
+.padding0 {
+  padding: 0; }
+
+.display0 {
+  display: none; }
+
+@font-face {
+  font-family: logo-font;
+  src: url("../font/Lightening%20Free%20Font.ttf"); }
+@font-face {
+  font-family: cuprum-font;
+  src: url("../font/Cuprum-Regular.ttf"); }
+@font-face {
+  font-family: segoeui-font;
+  src: url("../font/SEGOEUI.TTF"); }
+@font-face {
+  font-family: segoeui-semibol-font;
+  src: url("../font/seguisb.ttf"); }
+@font-face {
+  font-family: segoeui-light-font;
+  src: url("../font/segoeuil.ttf"); }
+@font-face {
+  font-family: font-awesome;
+  src: url("../font/fontawesome-webfont.ttf"); }
+@font-face {
+  font-family: segoeui-italic-font;
+  src: url("../font/segoeuii.ttf"); }
+body, html {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  font-family: segoeui-font !important;
+  cursor: default;
+  color: #333333;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  body .main > .title, html .main > .title {
+    color: #E91E63;
+    font-size: 75px; }
+  body .main > .info, html .main > .info {
+    color: #A8A9B1;
+    font-size: 25px; }
+  body .main > .site, html .main > .site {
+    margin-top: 50px; }
+  body .current > .title, html .current > .title {
+    font-size: 45px; }
+  body .current > .items, html .current > .items {
+    margin-top: 30px; }
+ body .current > .permissions {
+    font-size:23px;text-align: left;margin-left: 23px; }
+  body .different > .title, html .different > .title {
+    font-size: 45px; }
+  body .different > .items, html .different > .items {
+    margin-top: 30px; }
+  body .tools > .title, html .tools > .title {
+    font-size: 45px; }
+  body .tools > .sub-title, html .tools > .sub-title {
+    font-size: 35px; }
+  body .tools > .android, html .tools > .android {
+    margin-top: 35px; }
+  body .flow > .title, html .flow > .title {
+    font-size: 45px; }
+  body .flow > img, html .flow > img {
+    margin-top: 50px;
+    border: medium none;
+    box-shadow: none;
+    width: 110%; }
+  body .winner > .icon, html .winner > .icon {
+    font-family: font-awesome;
+    color: #FFC107;
+    font-size: 50px; }
+  body .winner > .icon:after, html .winner > .icon:after {
+    content: "\f091"; }
+  body .winner > .info, html .winner > .info {
+    color: white; }
+  body .reviews > .review, html .reviews > .review {
+    margin-top: 50px; }
+    body .reviews > .review > .data, html .reviews > .review > .data {
+      font-family: segoeui-italic-font; }
+    body .reviews > .review > .name, html .reviews > .review > .name {
+      font-size: 15px;
+      text-align: right;
+      color: #A8A9B1; }
+  body .project-profile > .title, html .project-profile > .title {
+    font-size: 45px; }
+  body .project-profile > .items, html .project-profile > .items {
+    margin-top: 30px; }
+  body .thank-you > .title, html .thank-you > .title {
+    font-size: 45px; }
+  body .thank-you > .sub-title, html .thank-you > .sub-title {
+    margin-top: 50px;
+    font-size: 35px; }
+  body .thank-you > .items, html .thank-you > .items {
+    margin-top: 20px; }
+
+/*# sourceMappingURL=app.css.map */

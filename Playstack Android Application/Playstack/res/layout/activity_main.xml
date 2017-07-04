@@ -1,0 +1,299 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toggle="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.shubham.playstack"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    tools:context="com.shubham.playstack.MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="56dp" >
+
+        <com.design.LogoView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp" 
+            android:gravity="center"
+            android:text="Playstack"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <com.design.util.IconTextView
+            android:id="@+id/btn_setting"
+            android:layout_width="56dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/social_container"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff" >
+
+        
+        <com.design.util.IconTextView
+            android:id="@+id/facebook"
+            android:layout_width="56dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/main"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <com.design.util.IconTextView
+            android:id="@+id/github"
+            android:layout_width="56dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/facebook"
+            android:background="@color/main"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <com.design.util.IconTextView
+            android:id="@+id/twitter"
+            android:layout_width="56dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/github"
+            android:background="@color/main"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    
+    
+    <com.zcw.togglebutton.ToggleButton
+        android:id="@+id/btn_toggle"        
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
+        app:borderWidth="1dp"
+        app:offColor="#e2e2e2"
+        app:onColor="#8BC34A" >
+    </com.zcw.togglebutton.ToggleButton>
+
+    <TextView
+        android:id="@+id/status_text"
+        android:paddingLeft="75dp"
+        android:paddingRight="75dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_toggle"
+        android:textSize="12sp"
+        android:text="Playstack is stopped."
+        android:textColor="@color/white" />
+    
+   
+
+    <RelativeLayout
+        android:id="@+id/setting_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#f4f4f4"
+        android:visibility="invisible" >
+    
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:text="Username and Password"
+                            android:textColor="@color/black_dull"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/input_username"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15px"
+                            android:hint="Username"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/input_password"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15px"
+                            android:hint="Password"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+                
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:text="selective synchronization"
+                            android:textColor="@color/black_dull"
+                            android:textSize="12sp" />
+
+                        <TableLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15px"
+                            android:background="@null" >
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="Music manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_music" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="Gallery manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_gallery" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="Contacts manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_contacts" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="Call Log manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_call_log" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="File manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_file" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="App manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_app" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <com.design.MangerTextView
+                                    android:layout_weight="1"
+                                    android:text="SMS manager" />
+
+                                <com.design.MangerCheckBoxView android:id="@+id/check_sms" />
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                
+            </LinearLayout>
+        </ScrollView>
+        
+        
+        <RelativeLayout
+            android:id="@+id/setting_top"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:background="#f4f4f4" >
+
+            <com.design.util.IconTextView
+                android:id="@+id/setting_back"
+                android:layout_width="56dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/purpel_main"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@id/setting_back"
+                android:gravity="center_vertical"
+                android:text="Settings"
+                android:textColor="@color/purpel_main"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/setting_save"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:text="Save"
+                android:textColor="@color/purpel_main"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        
+        
+    </RelativeLayout>
+
+</RelativeLayout>

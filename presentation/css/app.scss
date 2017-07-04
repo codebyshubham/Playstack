@@ -1,0 +1,147 @@
+@import "default";
+@import "variable";
+
+
+
+body,html{
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:rgba(0,0,0,0);
+  font-family: $font-main-normal!important;
+  cursor: default;
+  color: $color-black-dark;
+
+  //no selection
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+
+  //main
+  .main{
+    >.title{
+      color: $color-pink-main;
+      font-size: 75px;
+    }
+
+
+    >.info{
+      color: $color-black-dull;
+      font-size: 25px;
+    }
+
+    >.site{
+      margin-top: 50px;
+    }
+  }
+
+  //current
+  .current{
+    >.title{
+      font-size: 45px;
+    }
+    >.items{
+      margin-top: 30px;
+    }
+  }
+
+  //different
+  .different{
+    >.title{
+
+      font-size: 45px;
+    }
+    >.items{
+      margin-top: 30px;
+    }
+  }
+
+  //tools and technology
+  .tools{
+    >.title{
+      font-size: 45px;
+    }
+    >.sub-title{
+      font-size: 35px;
+    }
+
+    >.android{
+      margin-top: 35px;
+    }
+  }
+
+  //project-flow
+  .flow{
+    >.title{
+      font-size: 45px;
+    }
+
+    >img{
+      margin-top: 50px;
+      border: medium none;
+      box-shadow: none;
+      width: 110%;
+    }
+  }
+
+  //winner
+  .winner{
+    >.icon{
+
+      font-family: $font-awesome;
+      color: $color-yellow-main;
+      font-size: 50px;
+    }
+    >.icon:after{
+      content: "\f091";
+    }
+    >.info{
+      color: white;
+    }
+  }
+
+  //reviews
+  .reviews{
+    >.review{
+      margin-top: 50px;
+      >.data{
+        font-family: $font-main-italic;
+      }
+      >.name{
+        font-size: 15px;
+        text-align: right;
+        color: $color-black-dull;
+      }
+    }
+  }
+
+  //project profile
+  .project-profile{
+    >.title{
+      font-size: 45px;
+    }
+    >.items{
+      margin-top: 30px;
+    }
+  }
+
+  .thank-you{
+    >.title{
+      font-size: 45px;
+    }
+
+    >.sub-title{
+      margin-top: 50px;
+      font-size: 35px;
+    }
+    >.items{
+      margin-top: 20px;
+
+    }
+  }
+}

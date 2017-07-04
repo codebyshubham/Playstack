@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Playstack</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string-array name="database_key">
+        <item>username</item>
+        <item>password</item>
+    </string-array>
+    
+    <string-array name="database_value">
+        <item>admin</item>
+        <item>admin</item>
+    </string-array>
+
+</resources>
