@@ -1,0 +1,339 @@
+>.sms{
+  >.container{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+
+    $left-width : 330px;
+    >.left{
+      width: $left-width;
+      height: 100%;
+      float: left;
+      position: relative;
+      box-sizing: border-box;
+      border-right: 1px solid $color-white-dull;
+
+      $search-height : 65px;
+      $search-padding :10px;
+      >.search{
+        width: calc(100% - #{2 * $search-padding});
+        height: $search-height - (2 * $search-padding);
+        float: left;
+        position: relative;
+        padding: $search-padding;
+
+        >.container{
+          width: 100%;
+          height: 100%;
+
+
+          $container-height : $search-height - (2 * $search-padding);
+          >.search{
+            width: calc(100% - #{$container-height + $search-padding});
+            height: 100%;
+            float: left;
+            border: 1px solid #E2E2E2;
+            border-radius: 5px;
+            box-sizing: border-box;
+
+            >input{
+              border: medium none;
+              border-radius: 5px;
+              height: 100%;
+              margin: 0;
+              padding: 0 10px;
+              width: calc(100% - 20px);
+              color: $color-black-main;
+              font-family: $font-main-normal;
+            }
+          }
+
+          >.new{
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: $container-height;
+            height: $container-height;
+            float: right;
+            border: 1px solid #E2E2E2;
+            text-align: center;
+            line-height: $container-height;
+            font-family: $font-awesome;
+            font-size: 17px;
+          }
+        }
+      }
+
+      >.threads{
+        width: 100%;
+        height: calc(100% - #{$search-height});
+        float: left;
+        position: relative;
+
+        $item-height : 60px;
+        $item-padding : 10px;
+
+        >.item{
+          height: $item-height - ( 2 * $item-padding);
+          width: calc(100% - #{$item-padding * 2});
+          padding: $item-padding;
+          float: left;
+
+
+          $main-height : $item-height - ( 2 * $item-padding);
+
+          >.cover{
+            width: $main-height;
+            height: $main-height;
+            float: left;
+            background-color: #e2e2e2;
+            border-radius: 100%;
+            position: relative;
+
+            >.select{
+              left: 50%;
+              margin: 0;
+              padding: 0;
+              position: absolute;
+              top: 50%;
+              transform: translateX(-50%) translateY(-50%);
+
+              opacity: 0;
+              pointer-events: none;
+            }
+          }
+
+          >.info{
+            width: calc(100% - #{$main-height + $item-padding});
+            height: 100%;
+            float: right;
+            position: relative;
+
+            >.title{
+              width: 100%;
+              height: $main-height/2;
+              float: left;
+              line-height: $main-height/2;
+
+              >.name{
+                font-family: $font-main-semi-bold;
+              }
+              >.unread{
+                font-family: $font-awesome;
+              }
+            }
+            >.sub{
+              width: 100%;
+              height: $main-height/2;
+              float: left;
+              line-height: $main-height/2;
+              position: absolute;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              bottom: 0;
+              overflow: hidden;
+            }
+          }
+        }
+
+        >.item.unread{
+          .unread::before{
+            content: "\f023";
+          }
+        }
+
+
+
+        >.item:hover,.item.select{
+          >.cover{
+            >.select{
+              opacity: 1;
+              pointer-events: inherit;
+            }
+          }
+        }
+      }
+    }
+
+
+    >.right{
+      width: calc(100% - #{$left-width});
+      height: 100%;
+      float: left;
+      position: relative;
+
+      $title-height : 60px;
+      $action-height :70px;
+
+      >.title{
+        width: 100%;
+        height: $title-height;
+        float: left;
+
+        >.name{
+          height: 100%;
+          width: auto;
+          display: inline-block;
+          float: left;
+          line-height: $title-height;
+          font-size: 20px;
+          color : $color-black-dark;
+          text-indent: 15px;
+        }
+      }
+      >.body{
+        width: 100%;
+        float: left;
+        height: calc(100% - #{$title-height + $action-height});
+        position: relative;
+
+        >.container{
+          width: 100%;
+          height: auto;
+          max-height: 100%;
+          position: absolute;
+          bottom: 0;
+
+
+
+
+          >.item-you,.item-me{
+            margin-top: 15px;
+          }
+          $item-padding : 15px;
+          $profile-width : 40px;
+          >.item-you{
+            width: calc(100% - #{$item-padding * 2});
+            margin-left: $item-padding;
+            height: auto;
+            float: left;
+
+            >.main{
+              width: 100%;
+              height: auto;
+              float: left;
+
+              >.profile{
+                width: $profile-width;
+                height: 100%;
+                float: left;
+
+                >.cover{
+                  width: 100%;
+                  height: $profile-width;
+                  border-radius: 100%;
+                  float: left;
+                  background-color: #E2E2E2;
+                }
+              }
+
+              >.msg{
+                max-width: 60%;
+                width: auto;
+                background-color: #E2E2E2;
+                height: auto;
+                float: left;
+                margin-left: $item-padding;
+                padding: $item-padding;
+                border-radius: 5px;
+                position: relative;
+
+                >.text{
+                  float: left;
+                }
+              }
+            }
+
+            $time-height : 30px;
+            >.time{
+              width: auto;
+              display: inline-block;
+              height: $time-height;
+              float: left;
+              line-height: $time-height;
+              color: #C7C7C7;
+            }
+          }
+
+
+          >.item-me{
+            width: calc(100% - #{$item-padding * 2});
+            margin-left: $item-padding;
+            height: auto;
+            float: left;
+
+            >.main{
+              width: 100%;
+              height: auto;
+              float: left;
+
+              >.msg{
+                max-width: 60%;
+                width: auto;
+                background-color: $colo-green-main;
+                color: white;
+                height: auto;
+                float: right;
+                padding: $item-padding;
+                border-radius: 5px;
+                position: relative;
+
+                >.text{
+                  float: left;
+                }
+              }
+            }
+
+            $time-height : 30px;
+            >.time{
+              width: auto;
+              display: inline-block;
+              height: $time-height;
+              float: right;
+              line-height: $time-height;
+              color: #C7C7C7;
+            }
+          }
+        }
+      }
+
+      >.action{
+        width: 100%;
+        height: $action-height;
+        float: left;
+        box-sizing: border-box;
+        border-top:1px solid $color-white-dull;
+
+        $send-height : $action-height;
+        >.input{
+          width: calc(100% - #{$send-height});
+          height: 100%;
+          float: left;
+
+          >input{
+            border: medium none;
+            box-sizing: border-box;
+            height: 100%;
+            margin: 0;
+            padding: 0 20px;
+            width: 100%;
+            color: $color-black-main;
+            font-family: $font-main-normal;
+          }
+        }
+
+        >.send{
+          width: $send-height;
+          height: $send-height;
+          background-color: #e2e2e2;
+          float: left;
+          text-align: center;
+          line-height: $send-height;
+          font-family: $font-awesome;
+          font-size: 25px;
+          color: $color-black-dull;
+        }
+      }
+    }
+  }
+}

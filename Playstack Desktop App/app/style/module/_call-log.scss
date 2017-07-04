@@ -1,0 +1,281 @@
+>.call-log{
+  >.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    $actions-height :60px;
+    $status-height : 46px;
+
+
+    >.actions{
+      width: 100%;
+      height: $actions-height;
+      float: left;
+      position: relative;
+
+
+      >.container{
+        display: inline-block;
+        height: auto;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+
+
+        $action-height:25px;
+        >.action{
+          width: auto;
+          height: $action-height;
+          display: block;
+          float: left;
+          line-height: $action-height - 2px;
+          margin-left: 10px;
+          border-radius: 100px;
+
+          transition: $module-tab-transition;
+
+
+          >span{
+            padding-left: $module-padding * 2;
+            padding-right: $module-padding * 2;
+          }
+        }
+        >.action:first-child{
+          margin-left: 0;
+        }
+
+        >.active{
+          color: white;
+          background-color: $color-purple-main;
+        }
+      }
+    }
+
+    >.body{
+      width: 100%;
+      height: calc(100% - #{ $actions-height + $status-height});
+      float: left;
+
+      >.container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+
+        >.view{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          transition: $module-tab-transition;
+          overflow: auto;
+
+          opacity: 0;
+          pointer-events: none;
+
+          $item-height : 50px;
+          $item-padding : 30px;
+          >.item{
+            width: calc(100% - #{(2 * $item-padding) - 20px});
+            height: $item-height;
+            margin-left: $item-padding;
+            float: left;
+            position: relative;
+            overflow: hidden;
+
+            $index-width : 0px;
+            $icon-width : $item-height;
+            $profile-size :28px;
+            $contact-width :120px;
+            $time-width : 160px;
+            $actions-width : $item-height * 2;
+
+            >.index{
+              width: $index-width;
+              height: 100%;
+              float: left;
+              line-height: $item-height;
+
+
+              opacity: 0;
+            }
+
+            >.icon{
+              width: $icon-width;
+              height: 100%;
+              text-align: center;
+              line-height: $item-height;
+
+              font-family: $font-awesome;
+              float: left;
+            }
+
+            >.profile{
+              width: $item-height;
+              height: 100%;
+              float: left;
+
+              >.actual{
+                width: $profile-size;
+                height: $profile-size;
+                margin-left: ($item-height - $profile-size)/2;
+                margin-top: ($item-height - $profile-size)/2;
+                background-color: gray;
+                border-radius: 100%;
+              }
+            }
+
+            >.title{
+              height: 100%;
+              width: calc(100% - #{$index-width + $icon-width + $item-height + $contact-width + $time-width + $actions-width});
+              float: left;
+              display: inline-block;
+              line-height: $item-height;
+              text-indent: $module-padding;
+
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              >.main{
+                font-family: $font-main-semi-bold;
+                color: $color-black-dark;
+              }
+
+              >.duration{
+                margin-left: 20px;
+              }
+            }
+
+            >.contact{
+              width : $contact-width;
+              height: 100%;
+              text-align: center;
+              line-height: $item-height;
+              float: left;
+            }
+
+            >.time{
+              text-align: center;
+              width:$time-width ;
+              height: 100%;
+              float: left;
+              line-height: $item-height;
+            }
+
+            >.actions{
+              width: $actions-width;
+              height: 100%;
+              float: left;
+
+              >.action{
+                width: $item-height;
+                height: $item-height;
+                line-height: $item-height;
+                text-align: center;
+                float: left;
+                font-size: 20px;
+                font-family: $font-awesome;
+              }
+            }
+
+
+            opacity: 0;
+            display: none;
+            pointer-events: none;
+          }
+
+          >.active{
+            opacity: 1;
+            display: block;
+            pointer-events: inherit;
+          }
+
+
+          >.outgoing{
+            >.icon:after{
+              content: "\f064";
+              color: $color-light-green-main;
+            }
+          }
+
+          >.incoming{
+            >.icon{
+              transform: rotate(180deg);
+            }
+            >.icon:after{
+              transform: rotate(180deg);
+              content: "\f064";
+              color: $color-blue-main;
+            }
+          }
+
+          >.missed{
+            >.icon{
+              transform: rotate(180deg);
+            }
+            >.icon:after{
+              transform: rotate(180deg);
+              content: "\f064";
+              color: $color-red-main;
+            }
+          }
+        }
+
+        >.active{
+          opacity: 1;
+          pointer-events: inherit ;
+        }
+      }
+    }
+
+    >.status{
+      width: 100%;
+      height: $status-height;
+      float: left;
+      border-top: 1px solid $color-white-dull;
+      box-sizing: border-box;
+
+      >.container{
+        width: auto;
+        display: inline-block;
+        margin-right: 20px;
+        height: 100%;
+        position: relative;
+        float: right;
+
+        >.item{
+          width: auto;
+          display: inline-block;
+          height: 100%;
+          margin-left: 40px;
+
+
+          >span{
+            line-height: $status-height;
+          }
+          >.main{
+            color: $color-black-dark;
+          }
+          >.sub{
+            margin-left: 2px;
+          }
+
+        }
+
+
+
+
+        >.missed{
+          >.sub{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

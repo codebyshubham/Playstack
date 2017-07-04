@@ -1,0 +1,85 @@
+@import "variable";
+@import "default";
+
+
+body,html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:rgba(0,0,0,0);
+  font-size: 13px;
+  font-family: $font-main-normal;
+  cursor: default;
+  color: $color-black-main;
+
+  //no selection
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body{
+
+
+  >.platform{
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 $platform-shadow-y $platform-shadow-blur -4px black;
+    height: calc(100% - #{$platform-shadow-blur});
+    left: $platform-shadow-blur/2;
+    position: absolute;
+    top: $platform-shadow-blur/2 - $platform-shadow-y;
+    width: calc(100% - #{$platform-shadow-blur});
+    overflow: hidden;
+
+    >.window{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+
+
+      >.container{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: white;
+        transition: $module-tab-transition;
+
+        opacity: 0;
+        pointer-events: none;
+      }
+
+
+      >.active{
+        opacity: 1;
+        //auto
+        pointer-events: inherit;
+      }
+
+      //for modfule fdrag
+      >.active.module{
+        .drag{
+          -webkit-app-region: drag;
+        }
+      }
+
+      //for main drag
+      >.active.main{
+        .active.search{
+          .drag{
+            -webkit-app-region: drag;
+          }
+        }
+      }
+
+      @import "module/module";
+      @import "main/main";
+    }
+  }
+}
+
+

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playstack</title>
+    <link rel="stylesheet" href="js-lib/perfect-scrollbar/css/perfect-scrollbar.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body style="background-color:rgba(0,0,0,0);">
+    <div class="platform">
+        <div class="window">
+            <div class="active main container">
+                <div class="container">
+                    <div class="active search window">
+                        <div class="title-bar">
+                            <div class="title">Playstack</div>
+                            <div class="actions">
+                                <div class="container">
+                                    <div class="minimize action" bind-event="click:min"></div>
+                                    <div class="maximize action" bind-event="click:max"></div>
+                                    <div class="close action" bind-event="click:close"></div>
+                                </div>
+                            </div>
+                            <div class="drag"></div>
+                        </div>
+                        <div class="body">
+                            <div class="list">
+                                <div class="container">
+                                    <div class="item" bind-attr="mac" bind-event="click:click">
+                                        <div class="icon"></div>
+                                        <div class="name" bind-data="name">Mi-Max</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-bar">
+                            <div class="copy-right">
+                                <span class="text">Copyright (C) 2017 Linedeer inc. All Right Reserved.</span>
+                            </div>
+                            <div class="social">
+                                <div class="item" bind-event="click:github"></div>
+                                <div class="item" bind-event="click:facebook"></div>
+                                <div class="item" bind-event="click:twitter"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login window">
+                        <div class="container">
+                            <div class="box">
+                                <div class="close"></div>
+                                <div class="logo">
+                                    <div class="text">Playstack</div>
+                                </div>
+                                <div class="stuff">
+                                    <div class="container">
+                                        <input class="username" placeholder="Username" type="text" />
+                                        <input class="password" placeholder="Password" type="password" />
+                                        <div class="keep-me">
+                                            <input type="checkbox" />
+                                            <span class="text">keep me login</span>
+                                        </div>
+                                        <div class="login">
+                                            <div class="icon"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" module container">
+                <div class="title-bar">
+                    <div class="title">
+                        <span class="user" bind-data="device">Mi-Max</span>
+                        &nbsp;-&nbsp;
+                        <span class="module" bind-data="module">CALL-LOG</span>
+                    </div>
+                    <div class="actions">
+                        <div class="container">
+                            <div class="minimize action" bind-event="click:min"></div>
+                            <div class="maximize action" bind-event="click:max"></div>
+                            <div class="close action" bind-event="click:close"></div>
+                        </div>
+                    </div>
+                    <div class="logout" bind-event="click:click"></div>
+                    <div class="drag"></div>
+                </div>
+                <div class="left-bar">
+                    <div class="container">
+                        <div class="logo item">Playstack</div>
+                        <div class="action item"  action-id="music">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="action item" action-id="file">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="action item" action-id="contact">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+                        <div class="action item" action-id="call-log">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="active action item" action-id="app">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+
+                        <div class="action item" action-id="sms">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+                        <div class="action item" action-id="gallery">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+                        <div class="action item" action-id="download">
+                            <div class="text"></div>
+                            <div class="border"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modules">
+                    <div class="container">
+                        <div class="selective module" action-id="selective">
+                            <div class="container">
+                                <span>This feature currently off by user.</span>
+                            </div>
+
+                        </div>
+                        <div class=" download module" action-id="download">
+                            <div class="container">
+                                <div class="actions">
+                                    <div class="container">
+                                        <div class="item install">
+                                            <span>Download</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body scrollbar">
+                                    <div class="main">
+                                        <div class="item">
+                                            <div class="info">
+                                                <div class="filename item">
+                                                    <span  class="text" bind-event="click:openFile" bind-data="filename">IO 2015.mkv</span>
+                                                </div>
+                                                <div class="path item">
+                                                    <span class="text" bind-data="path" bind-event="click:openFolder">D/work/main</span>
+                                                </div>
+                                            </div>
+                                            <div class="task" bind-data="status">download</div>
+                                            <div class="status"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" music module" action-id="music">
+                            <div class="container">
+                                <div class="list-album">
+                                    <div class="container scrollbar">
+                                        <div class="item">
+                                            <div class="title">
+                                                <span class="main" bind-data="album">Lootera (2013)</span>
+                                                <span class="sub" bind-data="artist">Amit Trivedi</span>
+                                            </div>
+                                            <div class="no-of-song" bind-data="numOfSongs">02</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-album">
+                                    <div class="container scrollbar">
+                                        <div class="details">
+                                            <div class="cover" bind-css="background-image:cover"></div>
+                                            <div class="info">
+                                                <div class="title" bind-data="album">Riahana</div>
+                                                <div class="artist" bind-data="artist">by Riahana (Loud)</div>
+                                            </div>
+                                        </div>
+                                        <div class="song-list">
+                                            <div class="item" bind-event="click:click">
+                                                <div class="index" bind-data="index">1</div>
+                                                <div class="title" bind-data="title">Green River Ordinance - Red Fire Night (Official Audio)</div>
+                                                <div class="time" bind-data="duration">4:26</div>
+                                                <div class="download" bind-event="click:download"></div>
+                                                <div class="delete" bind-event="click:delete"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="player">
+                                    <div class="container">
+                                        <div class="cover" bind-css="background-image:cover"></div>
+                                        <div class="title">
+                                            <span class="main" bind-data="title"></span>
+                                        </div>
+                                        <div class="actions">
+                                            <div class="random" bind-event="click:random"></div>
+                                            <div class="main">
+                                                <div class="container">
+                                                    <div class="back" bind-event="click:prev"></div>
+                                                    <div class="play" bind-event="click:play" bind-data="status"></div>
+                                                    <div class="next" bind-event="click:next"></div>
+                                                </div>
+                                            </div>
+                                            <div class="loop" bind-data="click:loop"></div>
+                                        </div>
+                                        <div class="menu"></div>
+                                    </div>
+                                    <div class="status"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file module" action-id="file">
+                            <div class="container">
+                                <div class="title-bar">
+                                    <div class="back"></div>
+                                    <div class="path">/storage/emulated/0/DCMI/camera/</div>
+                                    <div class="actions">
+                                        <div class="action" title="Rename"></div>
+                                        <div class="action"></div>
+                                        <div class="action"></div>
+                                        <div class="action"></div>
+                                        <div class="action" bind-event="click:download"></div>
+                                    </div>
+                                </div>
+                                <div class="body scrollbar">
+                                    <div class="item folder" bind-event="dblclick:dblclick;click:click">
+                                        <div class="icon"></div>
+                                        <div class="name">
+                                            <span class="text" bind-data="name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="item file" bind-event="click:click">
+                                        <div class="icon"></div>
+                                        <div class="name">
+                                            <span class="text" bind-data="name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="item back" bind-event="dblclick:dblclick">
+                                        <div class="text">...</div>
+                                    </div>
+                                    <div class="drive" bind-event="dblclick:dblclick">
+                                        <div class="icon"></div>
+                                        <div class="title">
+                                            <span class="name" bind-data="name">sdcard1</span>
+                                            -
+                                            <span class="sub" bind-data="info">external storage(10.32GB/12.3GB)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" contact module" action-id="contact">
+                            <div class="container">
+                                <div class="left">
+                                    <div class="search">
+                                        <div class="container">
+                                            <div class="search">
+                                                <input placeholder="Search" type="text" />
+                                            </div>
+                                            <div class="new"></div>
+                                        </div>
+                                    </div>
+                                    <div class="threads scrollbar">
+                                        <div class="item" bind-event="click:click">
+                                            <div class="cover">
+                                                <img class="img" bind-attr="data-original"/>
+                                            </div>
+                                            <div class="info">
+                                                <div class="title">
+                                                    <span class="text" bind-data="name">shubham patel</span>
+                                                </div>
+                                                <div class="start" bind-data="star"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="title">
+                                        <div class="cover">
+                                            <img bind-attr="src"/>
+                                        </div>
+                                        <div class="info">
+                                            <div class="name" bind-data="name">shubham patel</div>
+                                            <div class="number" bind-data="number">+91 8888888888</div>
+                                            <div class="group" bind-data="group">My contact, Friends</div>
+                                        </div>
+                                        <div class="actions">
+                                            <div class="action"></div>
+                                            <div class="action"></div>
+                                            <div class="action"></div>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="container">
+
+                                            <div class="item">
+                                                <div class="container">
+                                                    <div class="value" bind-data="value">+91-8888888888</div>
+                                                    <div class="type" bind-data="type">Mobile</div>
+                                                    <div class="actions">
+                                                        <div class="sms action" bind-event="click:doEmail" bind-css="opacity:sms"></div>
+                                                        <div class="call action" bind-event="click:doCall" bind-css="opacity:call"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="call-log module" action-id="call-log">
+                            <div class="container">
+                                <div class="actions">
+                                    <div class="container">
+                                        <div class="active action" action-id="all">
+                                            <span>all</span>
+                                        </div>
+                                        <div class="action" action-id="incoming">
+                                            <span>incoming</span>
+                                        </div>
+                                        <div class="action" action-id="outgoing">
+                                            <span>outgoing</span>
+                                        </div>
+                                        <div class="action" action-id="missed">
+                                            <span>missed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="container">
+                                        <div class="active all view scrollbar" action-id="all">
+                                            <div class="active item">
+                                                <div class="index" bind-data="index">1</div>
+                                                <div class="icon"></div>
+                                                <div class="profile">
+                                                    <div class="actual"></div>
+                                                </div>
+                                                <div class="title">
+                                                    <span class="main" bind-data="name">Shubham</span>
+                                                    <span class="duration" bind-data="duration">1:10 minute</span>
+                                                </div>
+                                                <div class="contact" bind-data="number">+91 888888-8888</div>
+                                                <div class="time" bind-data="date">March 17 2016 5:15 pm</div>
+                                                <div class="actions">
+                                                    <div class="call action" bind-event="click:call"></div>
+                                                    <div class="download action" bind-event="click:delete"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="incoming view scrollbar" action-id="incoming">
+
+                                        </div>
+                                        <div class="outgoing view scrollbar" action-id="outgoing">
+
+                                        </div>
+                                        <div class="missed view scrollbar" action-id="missed">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="status">
+                                    <div class="container">
+                                        <div class="item incoming">
+                                            <span class="main">150 incoming</span>
+                                            <span class="sub">69:30 minutes</span>
+                                        </div>
+                                        <div class="item outgoing">
+                                            <span class="main">150 incoming</span>
+                                            <span class="sub">69:30 minutes</span>
+                                        </div>
+                                        <div class="item missed">
+                                            <span class="main">150 incoming</span>
+                                            <span class="sub">69:30 minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="app module" action-id="app">
+                            <div class="container">
+                                <div class="actions">
+                                    <div class="container">
+                                        <div class="active item action" action-id="user">
+                                            <span>user</span>
+                                        </div>
+                                        <div class="item action" action-id="system">
+                                            <span>system</span>
+                                        </div>
+                                        <div class="item install">
+                                            <span>install</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <div class="container">
+                                        <div class="active user view scrollbar" action-id="user">
+                                            <div class="item" bind-event="click:click">
+                                                <div class="index" bind-data="index">1</div>
+                                                <div class="icon">
+                                                    <div class="actual" bind-css="background-image:icon"></div>
+                                                </div>
+                                                <div class="title">
+                                                    <span class="name" bind-data="name">PingTools</span>
+                                                    <span class="size" bind-data="size">45.03MB</span>
+                                                </div>
+                                                <div class="actions">
+                                                    <div class="download action" bind-event="click:download"></div>
+                                                    <div class="uninstall action" bind-event="click:uninstall"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="view system scrollbar" action-id="system">system</div>
+                                    </div>
+                                </div>
+                                <div class="status">
+                                    <span class="active user text" action-id="user">25 user app installed</span>
+                                    <span class="system text" action-id="system">25 system app installed</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sms module" action-id="sms">
+                            <div class="container">
+                                <div class="left">
+                                    <div class="search">
+                                        <div class="container">
+                                            <div class="search">
+                                                <input placeholder="Search" type="text" />
+                                            </div>
+                                            <div class="new"></div>
+                                        </div>
+                                    </div>
+                                    <div class="threads scrollbar">
+                                        <div class="item" bind-event="click:click">
+                                            <div class="cover" bind-css="background-image:cover">
+                                                <input class="select" type="checkbox">
+                                            </div>
+                                            <div class="info">
+                                                <div class="title">
+                                                    <span class="name" bind-data="name">5757537</span>
+                                                    <span class="unread" ></span>
+                                                </div>
+                                                <div class="sub" bind-data="last">Enter this code to reset your ... Enter this code to reset your ..</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="title">
+                                        <div class="name" bind-data="title">5757575</div>
+                                    </div>
+                                    <div class="body scrollbar">
+                                        <div class="container">
+                                            <div class="item-you">
+                                                <div class="main">
+                                                    <div class="profile">
+                                                        <div class="cover"></div>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <span class="text" bind-data="data">Enter this code to reset your Twitter password: gsu7666z</span>
+                                                    </div>
+                                                </div>
+                                                <div class="time">
+                                                    <span class="text" bind-data="time">March 23 8:56 pm</span>
+                                                </div>
+                                            </div>
+                                            <div class="item-me">
+                                                <div class="main">
+                                                    <div class="msg">
+                                                        <span class="text" bind-data="data">Enter this code to reset your Twitter password: gsu7666z</span>
+                                                    </div>
+                                                </div>
+                                                <div class="time">
+                                                    <span class="text" bind-data="time">March 23 8:56 pm</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="action">
+                                        <div class="input">
+                                            <input class="text" type="text" placeholder="Write a message"/>
+                                        </div>
+                                        <div class="send"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery module" action-id="gallery">
+                            <div class="container">
+                                <div class="left">
+                                    <div class="container scrollbar">
+                                        <div class="item" bind-event="click:click">
+                                            <div class="cover">
+                                                <img bind-attr="data-original"/>
+                                            </div>
+                                            <div class="data">
+                                                <div class="name" bind-data="name">Camera</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="top-bar">
+                                        <div class="title">
+                                            <span class="name" bind-data="name">Camera</span>
+                                            <span class="items" bind-data="item">115 items</span>
+                                        </div>
+                                    </div>
+                                    <div class="body scrollbar">
+                                        <div class="container ">
+                                            <div class="item">
+                                                <img bind-attr="data-original" />
+                                                <div class="download action" bind-event="click:download"></div>
+                                                <div class="select action"></div>
+                                                <div class="delete action"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js-lib/jquery-2.2.2.js"></script>
+<script src="js-lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script> <!--scroll-bar-->
+<script src="js-lib/jquery.fileDownload.js"></script> <!--download file pluging-->
+<script src="js-lib/howler/howler.core.js"></script> <!--music player handler-->
+<script src="js-lib/jquery-lazyload/jquery.lazyload.js"></script>
+
+<!--my js-->
+
+<script src="app.js"></script> <!--event handler-->
+<script src="js/main/event.js"></script> <!--event handler-->
+<script src="js/go/ws-service.js"></script> <!--desktop service connection-->
+<script src="js/main/ws.js"></script> <!--android phone connection-->
+<script src="js/main/player.js"></script> <!--music player container-->
+
+
+
+<script>
+    if(window.navigator.userAgent != "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0"){
+        var gui = require("nw.gui");
+        var win = gui.Window.get();
+        win.show();
+    }
+
+</script>
+
+<script src="design.js"></script>
+<style>
+
+</style>
+</html>

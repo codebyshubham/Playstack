@@ -1,0 +1,162 @@
+>.file{
+  >.container{
+    width: 100%;
+    height: 100%;
+
+    $title-bar-height : 45px;
+    >.title-bar{
+      width: 100%;
+      height: $title-bar-height;
+      float: left;
+      position: relative;
+      border-bottom: 1px solid $color-white-dull;
+      box-sizing: border-box;
+
+
+      $back-width : $title-bar-height;
+      $action-width : $title-bar-height * 5;
+
+
+      >.back{
+        width: $back-width;
+        height: 100%;
+        float: left;
+        font-family: $font-awesome;
+        text-align: center;
+        line-height: $title-bar-height;
+        font-size: 22px;
+      }
+
+      >.path{
+        width: calc(100% - #{$back-width + $action-width});
+        height: 100%;
+        float: left;
+        line-height: $title-bar-height - 2px;
+        text-indent: 20px;
+      }
+
+
+      >.actions{
+        width: $action-width;
+        height: 100%;
+        float: left;
+        position: relative;
+
+        >.action{
+          width: $title-bar-height;
+          height: $title-bar-height;
+          float: left;
+          font-family: $font-awesome;
+          text-align: center;
+          line-height: $title-bar-height;
+          font-size: 15px;
+        }
+
+      }
+    }
+
+    $item-padding : 10px;
+    >.body{
+      width: calc(100% - #{$item-padding});
+      height: calc(100% - #{$title-bar-height + $item-padding});
+      padding-right: $item-padding;
+      padding-bottom: $item-padding;
+      position: relative;
+      float: left;
+
+      $item-width : 100px;
+      $item-height : 50px;
+      >.item{
+        width: $item-width + 20px;
+        height: $item-height + 20px;
+        float: left;
+        position: relative;
+        margin-left: $item-padding;
+        margin-top: $item-padding;
+        box-sizing: border-box;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 10px;
+
+        $icon-height : 33px;
+        $name-height : $item-height - $icon-height;
+        >.icon{
+          width: 100%;
+          height: $icon-height;
+          float: left;
+          text-align: center;
+          font-family: $font-awesome;
+          font-size: 35px;
+          color: $color-yellow-main;
+        }
+
+        >.name{
+          width: 100%;
+          height: $name-height;
+          float: left;
+          text-align: center;
+          line-height: $name-height;
+          position: relative;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+        }
+      }
+
+      >.active{
+        border: 1px solid $color-yellow-main;
+
+      }
+
+      >.file{
+        >.icon{
+          color: $color-black-main;
+          font-size: 30px;
+        }
+      }
+
+      >.back{
+        >.text{
+          text-align: center;
+          line-height: $item-height - 17px;
+          width: 100%;
+          font-size: 30px;
+          height: 100%;
+        }
+      }
+
+      $drive-padding : 25px;
+      $drive-height : 33px;
+      >.drive{
+        width: auto;
+        display: inline-block;
+        height: $drive-height;
+        float: left;
+        margin-left: $drive-padding;
+        margin-top: $drive-padding;
+
+        >.icon{
+          width: $drive-height;
+          height: $drive-height;
+          font-family: $font-awesome;
+          font-size: 35px;
+          float: left;
+          color: $color-yellow-main;
+        }
+        >.title{
+          width: auto;
+          height: $drive-height;
+          float: left;
+          line-height: $drive-height;
+          text-indent: 7px;
+          >.name{
+            font-family: $font-main-semi-bold;
+            color: $color-black-dark;
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,194 @@
+>.app{
+  >.container{
+    width: 100%;
+    height: 100%;
+
+    $actions-height :60px;
+    $status-height : 46px;
+    >.actions{
+      width: 100%;
+      height: $actions-height;
+      float: left;
+      position: relative;
+
+
+      >.container{
+        display: inline-block;
+        height: auto;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+
+
+        $action-height:25px;
+        >.item{
+          width: auto;
+          height: $action-height;
+          display: block;
+          float: left;
+          line-height: $action-height - 2px;
+          margin-left: 10px;
+          border-radius: 100px;
+
+          transition: $module-tab-transition;
+
+
+          >span{
+            padding-left: $module-padding * 2;
+            padding-right: $module-padding * 2;
+          }
+
+        }
+        >.install{
+          color: white;
+          background-color: $color-light-green-main;
+        }
+        >.item:first-child{
+          margin-left: 0;
+        }
+
+        >.active{
+          color: white;
+          background-color: $color-purple-main;
+        }
+      }
+    }
+    >.body {
+      width: 100%;
+      height: calc(100% - #{ $actions-height + $status-height});
+      float: left;
+
+      > .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+
+        >.view {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          transition: $module-tab-transition;
+          overflow: auto;
+
+          opacity: 0;
+          pointer-events: none;
+
+          $item-height : 50px;
+          $item-padding : 30px;
+          $actions-width : $item-height * 2;
+
+          >.item{
+            height: $item-height;
+            width: calc(100% - #{ (2 * $item-padding) - 25px});
+
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin-left: $item-padding;
+
+            $index-width : 50px;
+            $icon-width : $item-height;
+            >.index{
+              width: $index-width;
+              height: 100%;
+              line-height: $item-height;
+              float: left;
+            }
+
+            >.icon{
+              width: $item-height;
+              height: $icon-width;
+              float: left;
+
+              $actual-size :$icon-width - 10px;
+              >.actual{
+                width: $actual-size;
+                height: $actual-size;
+                border-radius: 5px;
+                margin-left: ($icon-width - $actual-size)/2;
+                margin-top: ($icon-width - $actual-size)/2;
+                background-size: cover;
+              }
+            }
+
+            >.title{
+              height: 100%;
+              line-height: $item-height;
+              float: left;
+              display: inline-block;
+              text-indent: $module-padding;
+              width: calc(100% - #{$index-width + $icon-width + $actions-width});
+
+
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
+              >.name{
+                font-family: $font-main-semi-bold;
+                color: $color-black-dark;
+              }
+
+              >.size{
+                margin-left: 5px;
+              }
+            }
+
+            >.actions{
+              width: $actions-width;
+              height: 100%;
+              float: left;
+
+              >.action{
+                width: $item-height;
+                height: $item-height;
+                line-height: $item-height;
+                text-align: center;
+                float: left;
+                font-size: 20px;
+                font-family: $font-awesome;
+              }
+            }
+          }
+        }
+
+        >.active{
+          opacity: 1;
+          pointer-events: inherit ;
+        }
+      }
+    }
+
+    >.status{
+      float: left;
+      width: 100%;
+      height: $status-height;
+      position: relative;
+
+      line-height: $status-height;
+
+      >.text{
+        position: absolute;
+        right: 15px;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: $module-tab-transition;
+      }
+
+      >.active{
+        opacity: 1;
+        pointer-events: inherit;
+
+      }
+    }
+
+
+
+
+  }
+}

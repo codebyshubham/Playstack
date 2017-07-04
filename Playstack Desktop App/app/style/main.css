@@ -1,0 +1,2358 @@
+/*input[type=checkbox] {
+  outline: 0
+}*/
+.alpha0 {
+    opacity: 0;
+}
+
+.pointer0 {
+    pointer-events: none;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.padding0 {
+    padding: 0;
+}
+
+.display0 {
+    display: none;
+}
+
+@font-face {
+    font-family: logo-font;
+    src: url("../font/Lightening%20Free%20Font.ttf");
+}
+
+@font-face {
+    font-family: cuprum-font;
+    src: url("../font/Cuprum-Regular.ttf");
+}
+
+@font-face {
+    font-family: segoeui-font;
+    src: url("../font/SEGOEUI.TTF");
+}
+
+@font-face {
+    font-family: segoeui-semibol-font;
+    src: url("../font/seguisb.ttf");
+}
+
+@font-face {
+    font-family: segoeui-light-font;
+    src: url("../font/segoeuil.ttf");
+}
+
+@font-face {
+    font-family: font-awesome;
+    src: url("../font/fontawesome-webfont.ttf");
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-size: 13px;
+    font-family: segoeui-font;
+    cursor: default;
+    color: #6A6B70;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body > .platform {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 18px -4px black;
+    height: calc(100% - 18px);
+    left: 9px;
+    position: absolute;
+    top: 7px;
+    width: calc(100% - 18px);
+    overflow: hidden;
+}
+
+body > .platform > .window {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+body > .platform > .window > .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .active.module .drag {
+    -webkit-app-region: drag;
+}
+
+body > .platform > .window > .active.main .active.search .drag {
+    -webkit-app-region: drag;
+}
+
+body > .platform > .window > .module > .left-bar {
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    background-color: #E91E63;
+}
+
+body > .platform > .window > .module > .left-bar > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .item {
+    width: 100%;
+    height: 60px;
+    float: left;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .logo {
+    font-family: logo-font;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .action {
+    font-family: font-awesome;
+    color: #F48FB1;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .action > .text {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    line-height: 60px;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .action > .border {
+    width: 3px;
+    height: 41px;
+    top: 9.5px;
+    background-color: white;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .active {
+    color: white;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .active > .text {
+    margin-left: 4px;
+}
+
+body > .platform > .window > .module > .left-bar > .container > .active > .border {
+    opacity: 1;
+}
+
+body > .platform > .window > .module > .modules {
+    position: absolute;
+    width: calc(100% - 60px);
+    height: calc(100% - 50px);
+    left: 60px;
+    top: 50px;
+}
+
+body > .platform > .window > .module > .modules > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .module {
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .selective > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .selective > .container > span {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions {
+    width: 100%;
+    height: 60px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions > .container {
+    display: inline-block;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions > .container > .action {
+    width: auto;
+    height: 25px;
+    display: block;
+    float: left;
+    line-height: 23px;
+    margin-left: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions > .container > .action > span {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions > .container > .action:first-child {
+    margin-left: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .actions > .container > .active {
+    color: white;
+    background-color: #9c27b0;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body {
+    width: 100%;
+    height: calc(100% - 106px);
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 0.2s ease-out;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item {
+    width: calc(100% - 40px);
+    height: 50px;
+    margin-left: 30px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .index {
+    width: 0px;
+    height: 100%;
+    float: left;
+    line-height: 50px;
+    opacity: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .icon {
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-family: font-awesome;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .profile {
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .profile > .actual {
+    width: 28px;
+    height: 28px;
+    margin-left: 11px;
+    margin-top: 11px;
+    background-color: gray;
+    border-radius: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .title {
+    height: 100%;
+    width: calc(100% - 480px);
+    float: left;
+    display: inline-block;
+    line-height: 50px;
+    text-indent: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .title > .main {
+    font-family: segoeui-semibol-font;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .title > .duration {
+    margin-left: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .contact {
+    width: 120px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .time {
+    text-align: center;
+    width: 160px;
+    height: 100%;
+    float: left;
+    line-height: 50px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .actions {
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .item > .actions > .action {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+    font-family: font-awesome;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .active {
+    opacity: 1;
+    display: block;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .outgoing > .icon:after {
+    content: "\f064";
+    color: #8bc34a;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .incoming > .icon {
+    transform: rotate(180deg);
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .incoming > .icon:after {
+    transform: rotate(180deg);
+    content: "\f064";
+    color: #2196F3;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .missed > .icon {
+    transform: rotate(180deg);
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .view > .missed > .icon:after {
+    transform: rotate(180deg);
+    content: "\f064";
+    color: #F44336;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .body > .container > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status {
+    width: 100%;
+    height: 46px;
+    float: left;
+    border-top: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container {
+    width: auto;
+    display: inline-block;
+    margin-right: 20px;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container > .item {
+    width: auto;
+    display: inline-block;
+    height: 100%;
+    margin-left: 40px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container > .item > span {
+    line-height: 46px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container > .item > .main {
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container > .item > .sub {
+    margin-left: 2px;
+}
+
+body > .platform > .window > .module > .modules > .container > .call-log > .container > .status > .container > .missed > .sub {
+    display: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album {
+    width: 330px;
+    height: calc(100% - 70px);
+    float: left;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item:first-child {
+    margin-top: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item > .title {
+    width: calc(100% - 106px);
+    height: 100%;
+    margin-left: 23px;
+    float: left;
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item > .title > .main {
+    color: #333333;
+    font-family: segoeui-semibol-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item > .title > .sub {
+    color: #6A6B70;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .item > .no-of-song {
+    width: 60px;
+    height: 100%;
+    float: right;
+    margin-right: 23px;
+    text-align: right;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .active {
+    color: #00BCD4;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .active > .title > .main, body > .platform > .window > .module > .modules > .container > .music > .container > .list-album > .container > .active > .title > .sub {
+    color: #00BCD4;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album {
+    width: calc(100% - 330px);
+    height: calc(100% - 70px);
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .details {
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 150px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .details > .cover {
+    width: 150px;
+    height: 150px;
+    float: left;
+    background-image: url("../rihanna.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .details > .info {
+    width: calc(100% - 180px);
+    margin-left: 30px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .details > .info > .title {
+    font-family: segoeui-light-font;
+    font-size: 25px;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list {
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    float: left;
+    height: auto;
+    margin-top: 15px;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item {
+    width: 100%;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item > .index {
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item > .title {
+    width: calc(100% - 190px);
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item > .time {
+    width: 40px;
+    height: 100%;
+    float: left;
+    text-align: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item > .download, body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .item > .delete {
+    font-family: font-awesome;
+    text-align: right;
+    line-height: 50px;
+    width: 50px;
+    height: 100%;
+    float: left;
+    font-size: 17px;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .view-album > .container > .song-list > .active {
+    color: #00BCD4;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player {
+    width: 100%;
+    height: 70px;
+    float: left;
+    box-sizing: border-box;
+    border-top: 1px solid #f4f4f4;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .status {
+    background: #FFC107;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    width: 0%;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container {
+    width: calc(100% - 20px);
+    height: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .cover {
+    height: 50px;
+    width: 50px;
+    background-color: #f4f4f4;
+    float: left;
+    background-size: cover;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .title {
+    width: auto;
+    display: inline-block;
+    line-height: 50px;
+    position: absolute;
+    left: 60px;
+    right: calc(50% + 200px);
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .title > .main {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions {
+    width: 280px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .random {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: font-awesome;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .main {
+    position: relative;
+    width: calc(100% - 100px);
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .main > .container {
+    width: 120px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .main > .container > .back {
+    width: 40px;
+    height: 100%;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .main > .container > .play {
+    width: 40px;
+    height: 100%;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .main > .container > .next {
+    width: 40px;
+    height: 100%;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .actions > .loop {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: font-awesome;
+    float: right;
+}
+
+body > .platform > .window > .module > .modules > .container > .music > .container > .player > .container > .menu {
+    width: 35px;
+    height: 50px;
+    float: right;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 50px;
+    color: #A8A9B1;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container {
+    width: 100%;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions {
+    width: 100%;
+    height: 60px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container {
+    display: inline-block;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container > .item {
+    width: auto;
+    height: 25px;
+    display: block;
+    float: left;
+    line-height: 23px;
+    margin-left: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container > .item > span {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container > .install {
+    color: white;
+    background-color: #8bc34a;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container > .item:first-child {
+    margin-left: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .actions > .container > .active {
+    color: white;
+    background-color: #9c27b0;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body {
+    width: 100%;
+    height: calc(100% - 106px);
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: all 0.2s ease-out;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item {
+    height: 50px;
+    width: calc(100% - 35px);
+    position: relative;
+    overflow: hidden;
+    float: left;
+    margin-left: 30px;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .index {
+    width: 50px;
+    height: 100%;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .icon {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .icon > .actual {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background-size: cover;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .title {
+    height: 100%;
+    line-height: 50px;
+    float: left;
+    display: inline-block;
+    text-indent: 10px;
+    width: calc(100% - 200px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .title > .name {
+    font-family: segoeui-semibol-font;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .title > .size {
+    margin-left: 5px;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .actions {
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .view > .item > .actions > .action {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+    font-family: font-awesome;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .body > .container > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .status {
+    float: left;
+    width: 100%;
+    height: 46px;
+    position: relative;
+    line-height: 46px;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .status > .text {
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .modules > .container > .app > .container > .status > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left {
+    width: 330px;
+    height: 100%;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 1px solid #f4f4f4;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .search {
+    width: calc(100% - 20px);
+    height: 45px;
+    float: left;
+    position: relative;
+    padding: 10px;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .search > .container {
+    width: 100%;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .search > .container > .search {
+    width: calc(100% - 55px);
+    height: 100%;
+    float: left;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .search > .container > .search > input {
+    border: medium none;
+    border-radius: 5px;
+    height: 100%;
+    margin: 0;
+    padding: 0 10px;
+    width: calc(100% - 20px);
+    color: #6A6B70;
+    font-family: segoeui-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .search > .container > .new {
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 45px;
+    height: 45px;
+    float: right;
+    border: 1px solid #E2E2E2;
+    text-align: center;
+    line-height: 45px;
+    font-family: font-awesome;
+    font-size: 17px;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads {
+    width: 100%;
+    height: calc(100% - 65px);
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item {
+    height: 40px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .cover {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-color: #e2e2e2;
+    border-radius: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .cover > .select {
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .info {
+    width: calc(100% - 50px);
+    height: 100%;
+    float: right;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .info > .title {
+    width: 100%;
+    height: 20px;
+    float: left;
+    line-height: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .info > .title > .name {
+    font-family: segoeui-semibol-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .info > .title > .unread {
+    font-family: font-awesome;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item > .info > .sub {
+    width: 100%;
+    height: 20px;
+    float: left;
+    line-height: 20px;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    bottom: 0;
+    overflow: hidden;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item.unread .unread::before {
+    content: "\f023";
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads > .item:hover > .cover > .select, body > .platform > .window > .module > .modules > .container > .sms > .container > .left > .threads .item.select > .cover > .select {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right {
+    width: calc(100% - 330px);
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .title {
+    width: 100%;
+    height: 60px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .title > .name {
+    height: 100%;
+    width: auto;
+    display: inline-block;
+    float: left;
+    line-height: 60px;
+    font-size: 20px;
+    color: #333333;
+    text-indent: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body {
+    width: 100%;
+    float: left;
+    height: calc(100% - 130px);
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you, body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container .item-me {
+    margin-top: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    height: auto;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .main {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .main > .profile {
+    width: 40px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .main > .profile > .cover {
+    width: 100%;
+    height: 40px;
+    border-radius: 100%;
+    float: left;
+    background-color: #E2E2E2;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .main > .msg {
+    max-width: 60%;
+    width: auto;
+    background-color: #E2E2E2;
+    height: auto;
+    float: left;
+    margin-left: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .main > .msg > .text {
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-you > .time {
+    width: auto;
+    display: inline-block;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    color: #C7C7C7;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-me {
+    width: calc(100% - 30px);
+    margin-left: 15px;
+    height: auto;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-me > .main {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-me > .main > .msg {
+    max-width: 60%;
+    width: auto;
+    background-color: #009688;
+    color: white;
+    height: auto;
+    float: right;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-me > .main > .msg > .text {
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .body > .container > .item-me > .time {
+    width: auto;
+    display: inline-block;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+    color: #C7C7C7;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .action {
+    width: 100%;
+    height: 70px;
+    float: left;
+    box-sizing: border-box;
+    border-top: 1px solid #f4f4f4;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .action > .input {
+    width: calc(100% - 70px);
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .action > .input > input {
+    border: medium none;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    color: #6A6B70;
+    font-family: segoeui-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .sms > .container > .right > .action > .send {
+    width: 70px;
+    height: 70px;
+    background-color: #e2e2e2;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+    font-family: font-awesome;
+    font-size: 25px;
+    color: #A8A9B1;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left {
+    width: 260px;
+    height: 100%;
+    float: left;
+    border-right: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .item {
+    width: calc(100% - 20px);
+    height: 40px;
+    float: left;
+    padding: 10px;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .item > .cover {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .item > .cover > img {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .item > .data {
+    width: calc(100% - 40px);
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .item > .data > .name {
+    text-indent: 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #333333;
+    float: left;
+    font-family: segoeui-semibol-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .active {
+    color: #ff9800;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .left > .container > .active .name {
+    color: #ff9800 !important;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right {
+    width: calc(100% - 260px);
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .top-bar {
+    width: 100%;
+    height: 60px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .top-bar > .title {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-indent: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .top-bar > .title > .name {
+    color: #333333;
+    font-family: segoeui-semibol-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body {
+    width: 100%;
+    height: calc(100% - 60px);
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: calc(100% - 10px);
+    height: auto;
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: #A8A9B1;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 3px 5px 1px #c0c0c0;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item > .action {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    font-family: font-awesome;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    text-shadow: 0 0 2px black;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+    opacity: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item > .delete {
+    right: 0;
+    bottom: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item > .download {
+    top: 0;
+    right: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item > .select {
+    left: 0;
+    bottom: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .gallery > .container > .right > .body > .container > .item:hover > .action {
+    pointer-events: inherit;
+    opacity: 1;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container {
+    width: 100%;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .title-bar {
+    width: 100%;
+    height: 45px;
+    float: left;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .title-bar > .back {
+    width: 45px;
+    height: 100%;
+    float: left;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 45px;
+    font-size: 22px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .title-bar > .path {
+    width: calc(100% - 270px);
+    height: 100%;
+    float: left;
+    line-height: 43px;
+    text-indent: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .title-bar > .actions {
+    width: 225px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .title-bar > .actions > .action {
+    width: 45px;
+    height: 45px;
+    float: left;
+    font-family: font-awesome;
+    text-align: center;
+    line-height: 45px;
+    font-size: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body {
+    width: calc(100% - 10px);
+    height: calc(100% - 55px);
+    padding-right: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .item {
+    width: 120px;
+    height: 70px;
+    float: left;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .item > .icon {
+    width: 100%;
+    height: 33px;
+    float: left;
+    text-align: center;
+    font-family: font-awesome;
+    font-size: 35px;
+    color: #FFC107;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .item > .name {
+    width: 100%;
+    height: 17px;
+    float: left;
+    text-align: center;
+    line-height: 17px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .active {
+    border: 1px solid #FFC107;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .file > .icon {
+    color: #6A6B70;
+    font-size: 30px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .back > .text {
+    text-align: center;
+    line-height: 33px;
+    width: 100%;
+    font-size: 30px;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .drive {
+    width: auto;
+    display: inline-block;
+    height: 33px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .drive > .icon {
+    width: 33px;
+    height: 33px;
+    font-family: font-awesome;
+    font-size: 35px;
+    float: left;
+    color: #FFC107;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .drive > .title {
+    width: auto;
+    height: 33px;
+    float: left;
+    line-height: 33px;
+    text-indent: 7px;
+}
+
+body > .platform > .window > .module > .modules > .container > .file > .container > .body > .drive > .title > .name {
+    font-family: segoeui-semibol-font;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left {
+    width: 330px;
+    height: 100%;
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    border-right: 1px solid #f4f4f4;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .search {
+    width: calc(100% - 20px);
+    height: 45px;
+    float: left;
+    position: relative;
+    padding: 10px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .search > .container {
+    width: 100%;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .search > .container > .search {
+    width: calc(100% - 55px);
+    height: 100%;
+    float: left;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .search > .container > .search > input {
+    border: medium none;
+    border-radius: 5px;
+    height: 100%;
+    margin: 0;
+    padding: 0 10px;
+    width: calc(100% - 20px);
+    color: #6A6B70;
+    font-family: segoeui-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .search > .container > .new {
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 45px;
+    height: 45px;
+    float: right;
+    border: 1px solid #E2E2E2;
+    text-align: center;
+    line-height: 45px;
+    font-family: font-awesome;
+    font-size: 17px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads {
+    width: 100%;
+    height: calc(100% - 65px);
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item {
+    height: 40px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .cover {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-color: #e2e2e2;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .cover > .img {
+    width: 100%;
+    height: 100%;
+    float: left;
+    border-radius: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .cover > .select {
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .info {
+    width: calc(100% - 50px);
+    height: 100%;
+    float: right;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .info > .title {
+    width: calc(100% - 40px);
+    height: 40px;
+    position: relative;
+    float: left;
+    line-height: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 5px;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .info > .start {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-family: font-awesome;
+    font-size: 15px;
+    line-height: 40px;
+    float: left;
+    color: #FFC107;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .item > .info > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .left > .threads > .active .title {
+    color: #03a9f4 !important;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right {
+    width: calc(100% - 330px);
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title {
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    padding-right: 15px;
+    width: calc(100% - 40px);
+    height: 150px;
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .cover {
+    background-color: #f4f4f4;
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .cover > img {
+    width: 100%;
+    height: 100%;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .info {
+    width: calc(100% - 285px);
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .info > .name {
+    height: 35px;
+    width: 100%;
+    float: left;
+    line-height: 35px;
+    font-size: 22px;
+    color: #333333;
+    text-indent: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .info > .number {
+    height: 35px;
+    width: 100%;
+    float: left;
+    line-height: 35px;
+    font-size: 22px;
+    color: #333333;
+    text-indent: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .info > .group {
+    width: 100%;
+    height: calc(100% - 70px);
+    float: left;
+    line-height: 35px;
+    text-indent: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .actions {
+    width: 135px;
+    height: 45px;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .title > .actions > .action {
+    width: 45px;
+    height: 45px;
+    float: left;
+    text-align: center;
+    line-height: 45px;
+    font-family: font-awesome;
+    font-size: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body {
+    width: 100%;
+    height: calc(100% - 200px);
+    position: relative;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container {
+    width: calc(100% - 60px);
+    height: 100%;
+    margin-left: 30px;
+    border-top: 1px solid #f4f4f4;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    float: left;
+    margin-top: 10px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .value {
+    width: calc(100% - 180px);
+    height: 100%;
+    float: left;
+    line-height: 40px;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .type {
+    width: 100px;
+    height: 100%;
+    float: left;
+    line-height: 40px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .actions {
+    width: 80px;
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .actions > .action {
+    width: 40px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-family: font-awesome;
+    font-size: 15px;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .actions > .sms {
+    color: #FFC107;
+}
+
+body > .platform > .window > .module > .modules > .container > .contact > .container > .right > .body > .container > .item > .container > .actions > .call {
+    color: #009688;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions {
+    width: 100%;
+    height: 60px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container {
+    display: inline-block;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container > .item {
+    width: auto;
+    height: 25px;
+    display: block;
+    float: left;
+    line-height: 23px;
+    margin-left: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-out;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container > .item > span {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container > .install {
+    color: white;
+    background-color: #9c27b0;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container > .item:first-child {
+    margin-left: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .actions > .container > .active {
+    color: white;
+    background-color: #9c27b0;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body {
+    width: 100%;
+    height: calc(100% - 60px);
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main {
+    width: 600px;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item {
+    width: 100%;
+    height: 60px;
+    float: left;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .info {
+    width: calc(100% - 100px);
+    height: 100%;
+    float: left;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .info > .item {
+    width: 100%;
+    height: 30px;
+    float: left;
+    position: relative;
+    text-indent: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .info > .filename {
+    line-height: 34px;
+    font-family: segoeui-semibol-font;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .info > .path {
+    line-height: 26px;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .task {
+    width: 90px;
+    height: 30px;
+    margin-top: 30px;
+    float: left;
+    margin-right: 10px;
+    text-align: right;
+    line-height: 30px;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item > .status {
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #64B5F6;
+    top: 0;
+    left: 0;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .pending {
+    border: 1px solid #D8D8D8 !important;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .downloading {
+    border: 1px solid #64B5F6 !important;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .complete {
+    border: 1px solid #8bc34a !important;
+}
+
+body > .platform > .window > .module > .modules > .container > .download > .container > .body > .main > .item:first-child {
+    margin-top: 0;
+}
+
+body > .platform > .window > .module > .title-bar {
+    width: calc(100% - 60px);
+    height: 50px;
+    border-bottom: 1px solid #f4f4f4;
+    left: 60px;
+    top: 0;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+body > .platform > .window > .module > .title-bar > .title {
+    width: auto;
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
+    font-family: segoeui-semibol-font;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    color: #333333;
+}
+
+body > .platform > .window > .module > .title-bar > .actions {
+    width: 100px;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+
+body > .platform > .window > .module > .title-bar > .actions > .container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body > .platform > .window > .module > .title-bar > .actions > .container > .action {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    float: left;
+    margin-left: 12px;
+}
+
+body > .platform > .window > .module > .title-bar > .actions > .container > .close {
+    background-color: #F2655E;
+}
+
+body > .platform > .window > .module > .title-bar > .actions > .container > .minimize {
+    background-color: #29CB39;
+}
+
+body > .platform > .window > .module > .title-bar > .actions > .container > .maximize {
+    background-color: #F8BE23;
+}
+
+body > .platform > .window > .module > .title-bar > .logout {
+    height: 50px;
+    width: 50px;
+    float: right;
+    line-height: 50px;
+    font-family: font-awesome;
+    font-size: 17px;
+    text-align: center;
+}
+
+body > .platform > .window > .module > .title-bar > .drag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 150px);
+}
+
+body > .platform > .window > .main > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .window {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body > .platform > .window > .main > .container > .active {
+    opacity: 1;
+    pointer-events: inherit;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar {
+    width: 100%;
+    height: 50px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .title {
+    font-family: logo-font;
+    font-size: 30px;
+    color: #333333;
+    line-height: 50px;
+    margin-left: 10px;
+    display: inline-block;
+    float: left;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions {
+    width: 100px;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions > .container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions > .container > .action {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    float: left;
+    margin-left: 12px;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions > .container > .close {
+    background-color: #F2655E;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions > .container > .minimize {
+    background-color: #29CB39;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .actions > .container > .maximize {
+    background-color: #F8BE23;
+}
+
+body > .platform > .window > .main > .container > .search > .title-bar > .drag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: calc(100% - 100px);
+    height: 100%;
+}
+
+body > .platform > .window > .main > .container > .search > .body {
+    width: 100%;
+    position: relative;
+    float: left;
+    height: calc(100% - 100px);
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list {
+    width: 100%;
+    height: 58px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list > .container {
+    width: auto;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list > .container > .item {
+    width: auto;
+    max-width: 130px;
+    float: left;
+    margin-left: 15px;
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list > .container > .item > .icon {
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-family: font-awesome;
+    font-size: 30px;
+    color: #2196F3;
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list > .container > .item > .name {
+    width: auto;
+    height: calc(100% - 35px);
+    line-height: 23px;
+    text-align: center;
+    background-color: #E91E63;
+    border-radius: 100px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+body > .platform > .window > .main > .container > .search > .body > .list > .container > .item :first-child {
+    margin-left: 0;
+}
+
+body > .platform > .window > .main > .container > .search > .bottom-bar {
+    width: 100%;
+    height: 50px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .search > .bottom-bar > .copy-right {
+    width: auto;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+body > .platform > .window > .main > .container > .search > .bottom-bar > .copy-right > .text {
+    line-height: 50px;
+    height: 100%;
+}
+
+body > .platform > .window > .main > .container > .search > .bottom-bar > .social {
+    width: auto;
+    display: inline-block;
+    background-color: transparent;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+body > .platform > .window > .main > .container > .search > .bottom-bar > .social > .item {
+    height: 100%;
+    width: 50px;
+    font-family: font-awesome;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+body > .platform > .window > .main > .container > .login {
+    background-color: #2196F3;
+}
+
+body > .platform > .window > .main > .container > .login > .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-radius: 100%;
+    background-color: #F2655E;
+    z-index: 1;
+    right: 10px;
+    top: 10px;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .logo {
+    height: calc(100% - 262px);
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .logo > .text {
+    width: 100%;
+    height: auto;
+    float: left;
+    font-family: logo-font;
+    color: #E91E63;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff {
+    width: 100%;
+    height: 202px;
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    float: left;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container {
+    width: calc(100% - 70px);
+    margin-left: 35px;
+    height: auto;
+    float: left;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > input {
+    margin: 10px 0 0 0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #A8A9B1;
+    width: 100%;
+    height: 40px;
+    float: left;
+    outline: none;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > input:first-child {
+    margin-top: 0;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > input:focus {
+    border-color: #2196F3;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > .keep-me {
+    width: 100%;
+    height: 60px;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > .keep-me > input {
+    margin: 0;
+    float: left;
+    height: 100%;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > .keep-me > .text {
+    width: auto;
+    display: inline-block;
+    height: 100%;
+    line-height: 60px;
+    text-indent: 10px;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > .login {
+    width: 100%;
+    height: 50px;
+    float: left;
+    position: relative;
+}
+
+body > .platform > .window > .main > .container > .login > .container > .box > .stuff > .container > .login > .icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: font-awesome;
+    font-size: 30px;
+    color: #8bc34a;
+}
+
+/*# sourceMappingURL=main.css.map */

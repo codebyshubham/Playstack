@@ -1,0 +1,169 @@
+>.search{
+
+  >.title-bar{
+    width: 100%;
+    height: $search-title-bar-height;
+    float: left;
+    position: relative;
+
+    >.title{
+      font-family: $font-logo;
+      font-size: 30px;
+      color: $color-black-dark;
+      line-height: $search-title-bar-height;
+      margin-left: $module-padding;
+      display: inline-block;
+      float: left;
+    }
+
+    $actions-width : 100px;
+    $action-size : 15px;
+    $action-margin-left:12px;
+    >.actions{
+      width: $actions-width;
+      height: 100%;
+      float: right;
+      position: relative;
+
+      >.container{
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+
+
+        >.action{
+          width: $action-size;
+          height: $action-size;
+          border-radius: 100%;
+          float: left;
+          margin-left: $action-margin-left;
+        }
+
+        >.close{
+          background-color: #F2655E;
+        }
+        >.minimize{
+          background-color: #29CB39;
+        }
+        >.maximize{
+          background-color: #F8BE23;
+        }
+      }
+    }
+
+    >.drag{
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: calc(100% - #{$actions-width});
+      height: 100%;
+    }
+  }
+
+
+  >.body{
+    width: 100%;
+    position: relative;
+    float: left;
+    height: calc(100% - #{$search-title-bar-height + $search-bottom-bar-height});
+
+
+    $list-height : 58px;
+    >.list{
+      width: 100%;
+      height: $list-height;
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+
+      >.container{
+        width: auto;
+        display: inline-block;
+        height: 100%;
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+
+        $item-max-width : 130px;
+        >.item{
+          width: auto;
+          max-width: $item-max-width;
+          float: left;
+          margin-left: 15px;
+
+          $icon-height : 35px;
+          >.icon{
+            width: 100%;
+            height: $icon-height;
+            text-align: center;
+            line-height: $icon-height;
+            font-family: $font-awesome;
+            font-size: 30px;
+            color: $color-blue-main;
+          }
+          >.name{
+            width: auto;
+            height: calc(100% - #{$icon-height});
+
+            line-height: $list-height - $icon-height;
+            text-align: center;
+            background-color: $color-pink-main;
+            border-radius: 100px;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+
+        >.item :first-child{
+          margin-left: 0;
+        }
+
+      }
+    }
+  }
+  >.bottom-bar{
+    width: 100%;
+    height: $search-bottom-bar-height;
+    float: left;
+    position: relative;
+
+
+    >.copy-right{
+      width: auto;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+
+      >.text{
+        line-height: $search-bottom-bar-height;
+        height: 100%;
+      }
+    }
+
+    >.social{
+      width: auto;
+      display: inline-block;
+      background-color: transparent;
+      height: 100%;
+      position: absolute;
+      right: 0;
+
+      >.item{
+        height: 100%;
+        width: $search-bottom-bar-height;
+        font-family: $font-awesome;
+        font-size: 18px;
+        text-align: center;
+        line-height: $search-bottom-bar-height;
+        float: left;
+      }
+    }
+  }
+}

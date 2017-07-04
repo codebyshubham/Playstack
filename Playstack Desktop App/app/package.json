@@ -1,0 +1,33 @@
+{
+  "name": "Playstack",
+  "main": "app.html",
+  "version": "1.0.0",
+  "app-id": "com.shubham.playstack",
+  "description": "The Android PC Suite",
+
+  "window": {
+    "width": 1200,
+    "height": 600,
+    "frame": false,
+    "toolbar": false,
+    "show": true,
+    "minimize": false,
+    "title": "Playstack",
+    "transparent": true,
+    "icon": "images/icon_tray.png"
+  },
+  "webkit": {
+    "plugin": true,
+    "toolbar": true
+  },
+  "author": "Shubham Patel",
+  "license": "ISC",
+  "dependencies": {
+    "jfs": "^0.2.6",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

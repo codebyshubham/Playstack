@@ -1,0 +1,321 @@
+>.music{
+
+  $item-height :50px;
+  >.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+
+
+    $list-album-width :330px;
+    $player-height :70px;
+
+    >.list-album{
+      width: $list-album-width;
+      height: calc(100% - #{$player-height});
+      float: left;
+      border-right: 1px solid $color-white-dull;
+      box-sizing: border-box;
+
+      >.container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+
+
+        $no-of-song-width : 60px;
+        $item-padding : 23px;
+
+        >.item:first-child{
+          margin-top: 15px;
+        }
+
+        >.item{
+          width: 100%;
+          height: $item-height;
+          line-height: $item-height;
+          float: left;
+          position: relative;
+
+
+          >.title{
+            width: calc(100% - #{$no-of-song-width + (2 * $item-padding)});
+            height: 100%;
+            margin-left: $item-padding;
+            float: left;
+
+
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            >.main{
+              color: $color-black-dark;
+              font-family: $font-main-semi-bold;
+            }
+            >.sub{
+              color: $color-black-main;
+            }
+          }
+
+          >.no-of-song{
+            width: $no-of-song-width;
+            height: 100%;
+            float: right;
+            margin-right: $item-padding;
+            text-align: right;
+          }
+        }
+
+        >.active{
+          color: $color-cyan-main;
+
+          >.title{
+            >.main,>.sub{
+              color: $color-cyan-main;
+            }
+          }
+        }
+      }
+    }
+
+    >.view-album{
+      width: calc(100% - #{$list-album-width});
+      height: calc(100% - #{$player-height});
+      float: left;
+
+      >.container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: auto;
+
+        $view-album-details-size : 150px;
+        $view-album-gap : 30px;
+        >.details{
+          width: calc(100% - #{2 * $view-album-gap});
+          margin-left: $view-album-gap;
+          margin-top: $view-album-gap;
+          height: 150px;
+          float: left;
+
+          >.cover{
+            width: $view-album-details-size;
+            height: $view-album-details-size;
+            float: left;
+            //background-color: gray;
+            background-image: url("../rihanna.jpg");
+            background-size: cover;
+            background-position: center center;
+          }
+
+          >.info{
+            width: calc(100% - #{$view-album-details-size + $view-album-gap});
+            margin-left: $view-album-gap;
+            height: 100%;
+            float: left;
+
+            >.title{
+              font-family: $font-main-light;
+              font-size: 25px;
+              color: $color-black-dark;
+            }
+          }
+        }
+
+        >.song-list{
+          width: calc(100% - #{$view-album-gap + 30px});
+          margin-left: $view-album-gap;
+          float: left;
+          height: auto;
+          margin-top: 15px;
+          position: relative;
+
+          >.item{
+            width: 100%;
+            height: $item-height;
+            float: left;
+            line-height: $item-height;
+
+            $index-width : 50px;
+            $time-width : 40px;
+            >.index{
+              width: $index-width;
+              height: 100%;
+              float: left;
+            }
+
+            >.title{
+              width: calc(100% - #{$index-width + $time-width + $index-width + $index-width});
+              height: 100%;
+              float: left;
+            }
+            >.time{
+              width: $time-width;
+              height: 100%;
+              float: left;
+              text-align: left;
+            }
+
+            >.download,>.delete{
+              font-family: $font-awesome;
+              text-align: right;
+              line-height: $index-width;
+              width: $index-width;
+              height: 100%;
+              float: left;
+              font-size: 17px;
+
+            }
+          }
+
+          >.active{
+            color: $color-cyan-main;
+          }
+        }
+      }
+    }
+
+    >.player{
+      width: 100%;
+      height: $player-height;
+      float: left;
+      box-sizing: border-box;
+      border-top: 1px solid $color-white-dull;
+      position: relative;
+
+
+      >.status{
+        background: $color-yellow-main;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        width: 0%;
+      }
+
+      $player-gap :10px;
+      $container-height : $player-height - (2 * $player-gap);
+      >.container{
+        width: calc(100% - #{$player-gap *2});
+        height: $container-height;
+        margin-left: $player-gap;
+        margin-top: $player-gap;
+        position: relative;
+
+
+
+
+        $cover-size : $container-height;
+        $menu-size : $container-height;
+        $action-width : 280px;
+
+        >.cover{
+          height: $cover-size;
+          width: $cover-size;
+          background-color:$color-white-dull;
+          float: left;
+          background-size: cover;
+
+        }
+
+        >.title{
+          width: auto;
+          display: inline-block;
+          line-height: $container-height;
+          position: absolute;
+          left:$player-gap + $cover-size;
+          right: calc(50% + #{ ($action-width/2) + $player-gap + 50px});
+
+          >.main{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+          }
+        }
+        >.actions{
+          width: $action-width;
+          height: 100%;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+
+
+          >.random{
+            width: $container-height;
+            height: $container-height;
+            text-align: center;
+            line-height: $container-height;
+            font-family: $font-awesome;
+            float: left;
+          }
+
+          >.main{
+            position: relative;
+            width: calc(100% - #{2 * $container-height});
+            height: 100%;
+            float: left;
+
+            $item-width :$container-height - 10px;
+            >.container{
+              width: $item-width * 3;
+              height: 100%;
+              display: inline-block;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+
+              >.back{
+                width: $item-width;
+                height: 100%;
+                font-family: $font-awesome;
+                text-align: center;
+                line-height: $container-height;
+                float: left;
+              }
+
+              >.play{
+                width: $item-width;
+                height: 100%;
+                font-family: $font-awesome;
+                text-align: center;
+                line-height: $container-height;
+                float: left;
+              }
+              >.next{
+                width: $item-width;
+                height: 100%;
+                font-family: $font-awesome;
+                text-align: center;
+                line-height: $container-height;
+                float: left;
+              }
+            }
+          }
+
+          >.loop{
+            width: $container-height;
+            height: $container-height;
+            text-align: center;
+            line-height: $container-height;
+            font-family: $font-awesome;
+            float: right;
+          }
+        }
+
+        >.menu{
+          width: $container-height - 15px;
+          height: $container-height;
+          float: right;
+          font-family: $font-awesome;
+          text-align: center;
+          line-height: $container-height;
+          color: $color-black-dull;
+        }
+      }
+    }
+  }
+}
